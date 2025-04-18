@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - HopCovoit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f7f9fc; margin: 0; padding: 0; }
+    header { background: #fff; padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    header h1 { margin: 0; font-size: 24px; color: #2a61d0; }
+    header p { font-size: 12px; color: #555; margin: 2px 0 0; }
+    nav { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px; }
+    nav a { text-decoration: none; color: #333; }
+    main { max-width: 800px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    h2 { color: #2a61d0; text-align: center; margin-bottom: 30px; }
+    details { margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; background: #fff; padding: 15px; }
+    summary { font-weight: bold; cursor: pointer; color: #2a61d0; }
+    summary::-webkit-details-marker { display: none; }
+    details[open] summary::after { content: " ▲"; }
+    summary::after { content: " ▼"; }
+    footer { background: #ffffff; text-align: center; padding: 20px; border-top: 1px solid #eee; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>HopCovoit</h1>
+      <p>Un hop et vous êtes de l’autre côté</p>
+    </div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="commentçamarche.html">Comment ça marche</a>
+      <a href="simulateur.html">Simulateur</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="inscription.html">Inscription</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Foire aux questions</h2>
+
+    <h3 style="color: #2a61d0; margin-top: 40px;">🧑‍✈️ Catégorie : Conducteurs</h3>
+
+    <details>
+      <summary>Qui peut devenir conducteur ?</summary>
+      <p>Tout travailleur frontalier ayant un véhicule assuré et en état de marche, effectuant régulièrement un trajet domicile-travail entre la France et la Suisse.</p>
+    </details>
+
+    <details>
+      <summary>Comment fonctionne le remboursement ?</summary>
+      <p>Les conducteurs sont remboursés dans la limite de 0,315 €/km/passager selon le barème fiscal du covoiturage non fiscalisé.</p>
+    </details>
+
+    <details>
+      <summary>Que se passe-t-il si j’annule un trajet ?</summary>
+      <p>Les conducteurs doivent prévenir au moins 24h à l'avance. En cas d'annulation tardive, un malus pourra être appliqué et la réservation sera annulée.</p>
+    </details>
+
+    <h3 style="color: #2a61d0; margin-top: 40px;">🧍‍♀️ Catégorie : Passagers</h3>
+
+    <details>
+      <summary>Que se passe-t-il si j’annule un trajet ?</summary>
+      <p>Les passagers doivent annuler au moins 24h à l'avance. En cas d'annulation tardive, un malus pourra être appliqué et les crédits ne seront pas recrédités automatiquement.</p>
+    </details>
+
+    <details>
+      <summary>Puis-je voir les trajets avant de m'inscrire ?</summary>
+      <p>Les trajets ainsi que les précisions sont visibles une fois l'inscription faite.</p>
+    </details>
+
+    <details>
+      <summary>Puis-je me faire rembourser si je ne suis pas satisfait de la plateforme ?</summary>
+      <p>Les crédits non utilisés sous 30 jours sont remboursés sur demande.</p>
+    </details>
+
+    <section style="margin-top: 50px;">
+      <h2 style="text-align: center; color: #2a61d0;">Une question ? Contactez-nous</h2>
+      <form action="https://formsubmit.co/cornelia.lnt@live.fr" method="POST" style="max-width: 500px; margin: 30px auto 0; display: flex; flex-direction: column; gap: 15px;">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="nom" placeholder="Votre nom" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+        <input type="email" name="email" placeholder="Votre email" required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+        <textarea name="message" rows="5" placeholder="Votre message..." required style="padding: 10px; border-radius: 6px; border: 1px solid #ccc;"></textarea>
+        <button type="submit" style="background-color: #2a61d0; color: white; padding: 12px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    Mentions légales | CGU | Contact<br>
+    © 2025 HopCovoit
+  </footer>
+</body>
+</html>

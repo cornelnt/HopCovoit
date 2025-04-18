@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifs - HopCovoit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f7f9fc; margin: 0; padding: 0; }
+    header { background: #fff; padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    header h1 { margin: 0; font-size: 24px; color: #2a61d0; }
+    header p { font-size: 12px; color: #555; margin: 2px 0 0; }
+    nav { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px; }
+    nav a { text-decoration: none; color: #333; }
+    main { max-width: 800px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    h2 { color: #2a61d0; text-align: center; margin-bottom: 30px; }
+    footer { background: #ffffff; text-align: center; padding: 20px; border-top: 1px solid #eee; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>HopCovoit</h1>
+      <p>Un hop et vous êtes de l’autre côté</p>
+    </div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="commentçamarche.html">Comment ça marche</a>
+      <a href="simulateur.html">Simulateur</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="inscription.html">Inscription</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Nos cartes de crédits</h2>
+    <div style="position: relative; max-width: 750px; margin: 0 auto; overflow: hidden;">
+      <div id="carousel" style="display: flex; transition: transform 0.5s ease; width: max-content;">
+        <div style="min-width: 700px; margin: 0 25px; background: #ffffff; border: 1px solid #ddd; border-radius: 12px; padding: 40px 30px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+          <h3 style="color: #2a61d0; margin: 0 0 10px;">Starter</h3>
+          <p style="font-size: 14px; margin: 4px 0;">10 crédits</p>
+          <p style="font-size: 18px; font-weight: bold; color: #333;">25 €</p>
+          <div style="margin-top: 20px;">
+            <a href="inscription.html" style="display: inline-block; background-color: #2a61d0; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">Choisir cette formule</a>
+          </div>
+        </div>
+        <div style="min-width: 700px; margin: 0 25px; background: #ffffff; border: 2px solid #f1c40f; border-radius: 12px; padding: 40px 30px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: relative;">
+          <div style="position: absolute; top: -10px; right: -10px; background: #f1c40f; color: #000; font-size: 12px; font-weight: bold; padding: 6px 12px; border-radius: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">+ Populaire</div>
+          <h3 style="color: #2a61d0; margin: 0 0 10px;">Équilibre</h3>
+          <p style="font-size: 14px; margin: 4px 0;">20 crédits</p>
+          <p style="font-size: 18px; font-weight: bold; color: #333;">45 €</p>
+          <div style="margin-top: 20px;">
+            <a href="inscription.html" style="display: inline-block; background-color: #2a61d0; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">Choisir cette formule</a>
+          </div>
+        </div>
+        <div style="min-width: 700px; margin: 0 25px; background: #ffffff; border: 1px solid #ddd; border-radius: 12px; padding: 40px 30px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+          <h3 style="color: #2a61d0; margin: 0 0 10px;">Confort</h3>
+          <p style="font-size: 14px; margin: 4px 0;">40 crédits</p>
+          <p style="font-size: 18px; font-weight: bold; color: #333;">85 €</p>
+          <div style="margin-top: 20px;">
+            <a href="inscription.html" style="display: inline-block; background-color: #2a61d0; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">Choisir cette formule</a>
+          </div>
+        </div>
+        <div style="min-width: 700px; margin: 0 25px; background: #ffffff; border: 1px solid #ddd; border-radius: 12px; padding: 40px 30px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+          <h3 style="color: #2a61d0; margin: 0 0 10px;">Maxi Liberté</h3>
+          <p style="font-size: 14px; margin: 4px 0;">80 crédits</p>
+          <p style="font-size: 18px; font-weight: bold; color: #333;">160 €</p>
+          <div style="margin-top: 20px;">
+            <a href="inscription.html" style="display: inline-block; background-color: #2a61d0; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">Choisir cette formule</a>
+          </div>
+        </div>
+      </div>
+      <button onclick="scrollCarousel(-1)" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); background: #2a61d0; color: white; border: none; padding: 10px; cursor: pointer;">&#10094;</button>
+      <button onclick="scrollCarousel(1)" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background: #2a61d0; color: white; border: none; padding: 10px; cursor: pointer;">&#10095;</button>
+    </div>
+
+    <script>
+      let scrollIndex = 0;
+      function scrollCarousel(direction) {
+        const carousel = document.getElementById('carousel');
+        const cardWidth = 750;
+        const totalCards = carousel.children.length;
+        scrollIndex += direction;
+        if (scrollIndex < 0) scrollIndex = 0;
+        if (scrollIndex >= totalCards) scrollIndex = totalCards - 1;
+        carousel.style.transform = `translateX(-${scrollIndex * cardWidth}px)`;
+      }
+    </script>
+  </main>
+
+  <footer>
+    Mentions légales | CGU | Contact<br>
+    © 2025 HopCovoit
+  </footer>
+</body>
+</html>

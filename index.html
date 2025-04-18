@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HopCovoit - Covoiturage France-Suisse</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f9fc; color: #333; }
+    header { background: #ffffff; padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
+    header h1 { color: #2a61d0; font-size: 24px; margin: 0; }
+    nav a { margin: 0 10px; text-decoration: none; color: #333; }
+    .hero { text-align: center; padding: 60px 20px; background: #eaf0fa; }
+    .hero h2 { font-size: 32px; margin-bottom: 20px; }
+    .hero button { margin: 10px; padding: 12px 20px; font-size: 16px; border: none; border-radius: 6px; cursor: pointer; }
+    .btn-primary { background-color: #2a61d0; color: white; }
+    .btn-secondary { background-color: white; color: #2a61d0; border: 1px solid #2a61d0; }
+    .section { padding: 40px 20px; text-align: center; }
+    .features, .steps { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); width: 200px; }
+    .form-simulateur { margin-top: 30px; max-width: 400px; margin-left: auto; margin-right: auto; }
+    .form-simulateur input { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+    .form-simulateur button { width: 100%; }
+    .results { margin-top: 20px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    footer { background: #ffffff; text-align: center; padding: 20px; border-top: 1px solid #eee; font-size: 14px; }
+      @media (max-width: 768px) {
+      header { flex-direction: column; align-items: flex-start; padding: 10px; }
+      nav { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 10px; }
+      nav a { margin: 0; padding: 5px 0; }
+      .hero h2 { font-size: 24px; }
+      .hero p { font-size: 16px !important; }
+      .hero button { width: 100%; max-width: 300px; margin: 10px auto; display: block; }
+      .features, .steps { flex-direction: column; gap: 10px; }
+      .card { width: 90%; margin: auto; }
+      .section { padding: 30px 15px; }
+    }
+  a.btn-primary, a.btn-secondary {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+  
+</head>
+<body>
+  <header>
+    <div>
+      <h1 style="margin: 0; font-size: 24px; color: #2a61d0;">HopCovoit</h1>
+      <p style="font-size: 12px; color: #555; margin: 2px 0 0;">Un hop et vous êtes de l’autre côté</p>
+    </div>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#fonctionnement">Comment ça marche</a>
+      <a href="#simulateur">Simulateur</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#inscription">Inscription</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Réinventons le covoiturage transfrontalier</h2>
+    <p style="font-size: 18px; color: #444; margin-top: 10px;">Optimisez vos trajets domicile-travail entre la France et la Suisse avec HopCovoit</p>
+    <a href="inscription.html" class="btn-primary" style="text-decoration: none;">S'inscrire</a>
+    <a href="simulateur.html" class="btn-secondary" style="text-decoration: none;">Simuler mon abonnement</a>
+  </section>
+
+  <section class="section">
+    <h3>Une solution pensée pour les travailleurs frontaliers</h3>
+    <p style="max-width: 600px; margin: 0 auto; font-size: 18px; line-height: 1.6;">
+      HopCovoit vous permet de covoiturer simplement entre votre domicile en France et votre lieu de travail en Suisse.<br>
+      Moins de stress, plus d'économies, et un impact écologique réduit.
+    </p>
+  </section>
+
+  <section class="section">
+    <h3>Pourquoi HopCovoit ?</h3>
+    <div class="features">
+      <div class="card">💶 Économique</div>
+      <div class="card">🌱 Écologique</div>
+      <div class="card">🤝 Convivial</div>
+      <div class="card">🕒 Flexible</div>
+    </div>
+  </section>
+
+  <section class="section" id="fonctionnement">
+  <h3>Comment ça marche ?</h3>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; margin-top: 30px;">
+    <div style="text-align: center;">
+      <div style="font-size: 36px;">📝</div>
+      <p>Je m’inscris</p>
+    </div>
+    <div style="font-size: 24px; color: #ccc;">➔</div>
+    <div style="text-align: center;">
+      <div style="font-size: 36px;">🔍</div>
+      <p>Je cherche un trajet</p>
+    </div>
+    <div style="font-size: 24px; color: #ccc;">➔</div>
+    <div style="text-align: center;">
+      <div style="font-size: 36px;">📅</div>
+      <p>Je réserve</p>
+    </div>
+    <div style="font-size: 24px; color: #ccc;">➔</div>
+    <div style="text-align: center;">
+      <div style="font-size: 36px;">🚗</div>
+      <p>Je monte à bord</p>
+    </div>
+  </div>
+</section>
+
+  <section class="section">
+    <a href="#simulateur" class="btn-primary" style="display:inline-block; text-align:center; padding:16px 28px; background-color:#2a61d0; color:white; border-radius:8px; text-decoration:none; font-size:18px;">Simuler maintenant</a>
+  </section>
+
+  <footer>
+    Mentions légales | CGU | Contact<br>
+    © 2025 HopCovoit
+  </footer>
+
+</body>
+</html>

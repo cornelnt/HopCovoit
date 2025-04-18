@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulateur - HopCovoit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #f7f9fc; margin: 0; padding: 0; }
+    header { background: #fff; padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    header h1 { margin: 0; font-size: 24px; color: #2a61d0; }
+    header p { font-size: 12px; color: #555; margin: 2px 0 0; }
+    nav { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px; }
+    nav a { text-decoration: none; color: #333; }
+    main { max-width: 600px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    h2 { color: #2a61d0; margin-bottom: 20px; text-align: center; }
+    form { display: flex; flex-direction: column; gap: 15px; }
+    label { font-weight: 600; }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #2a61d0;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .results { background: #eaf0fa; padding: 15px; border-radius: 8px; margin-top: 20px; }
+    footer {
+      background: #ffffff;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #eee;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1 style="margin: 0; font-size: 24px; color: #2a61d0;">HopCovoit</h1>
+      <p style="font-size: 12px; color: #555; margin: 2px 0 0;">Un hop et vous êtes de l’autre côté</p>
+    </div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="commentçamarche.html">Comment ça marche</a>
+      <a href="simulateur.html">Simulateur</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="inscription.html">Inscription</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <div style="background: url('covoiturage_image_simulateur.jpg') center/cover no-repeat; padding: 80px 20px; text-align: center; color: white;">
+    <h2 style="margin-bottom: 10px; font-size: 32px;">Des crédits, zéro galère</h2>
+    <p style="max-width: 700px; margin: 0 auto; font-size: 18px;">Vos trajets frontaliers chaque jour, avec des conducteurs fiables et proches de chez vous</p>
+  </div>
+
+  <main>
+    <h2>Simulez vos crédits de covoiturage</h2>
+    <form id="simulateur-form">
+      <label for="depart">Ville de départ</label>
+      <input type="text" id="depart" name="depart" required>
+
+      <label for="arrivee">Ville d'arrivée</label>
+      <input type="text" id="arrivee" name="arrivee" required>
+
+      <button type="submit">Calculer</button>
+    </form>
+    <div class="results" id="resultat"></div>
+  </main>
+
+  <section style="background: #f0f4fa; padding: 40px 20px; text-align: center;">
+    <h2 style="color: #2a61d0; margin-bottom: 20px;">Les avantages de <strong>HopCovoit</strong></h2>
+    <div style="text-align: left; display: inline-block; font-size: 16px; line-height: 1.8;">
+      <p>🚘 Réservation automatique avec vos conducteurs habituels</p>
+      <p>📆 Planification des trajets à la semaine</p>
+      <p>👤 Conducteurs évalués, profils vérifiés</p>
+      <p>📱 Appli intuitive avec suivi des trajets</p>
+      <p>☎️ Support client prioritaire</p>
+      <p>🔄 Flexibilité en cas d’annulation dernière minute</p>
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="inscription.html" style="background-color: #2a61d0; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block;">Inscrivez-vous maintenant</a>
+    </div>
+  </section>
+
+  <footer>
+    Mentions légales | CGU | Contact<br>
+    © 2025 HopCovoit
+  </footer>
+
+  <script>
+    function initAutocomplete() {
+      const options = { types: ['(cities)'], componentRestrictions: { country: ['fr', 'ch'] } };
+      new google.maps.places.Autocomplete(document.getElementById("depart"), options);
+      new google.maps.places.Autocomplete(document.getElementById("arrivee"), options);
+    }
+
+    function calculerDistance(e) {
+      e.preventDefault();
+      const service = new google.maps.DistanceMatrixService();
+      const origine = document.getElementById("depart").value;
+      const destination = document.getElementById("arrivee").value;
+      service.getDistanceMatrix({
+        origins: [origine],
+        destinations: [destination],
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.METRIC
+      }, function(response, status) {
+        if (status === 'OK') {
+          const distanceText = response.rows[0].elements[0].distance.text;
+          const distanceKm = parseFloat(distanceText.replace(',', '.'));
+          let crédit = "";
+          if (distanceKm < 10) crédit = "1";
+          else if (distanceKm < 25) crédit = "2";
+          else if (distanceKm < 50) crédit = "3";
+          else if (distanceKm < 100) crédit = "4";
+          else crédit = "5";
+          document.getElementById("resultat").innerText = `🎯 Crédit nécessaire : ${crédit}`;
+        }
+      });
+    }
+
+    window.onload = function() {
+      initAutocomplete();
+      document.getElementById("simulateur-form").addEventListener("submit", calculerDistance);
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRY5mfOQgea7Wu4EmiDZK6_oGUfT4KGKU&libraries=places&callback=initAutocomplete" async defer></script>
+</body>
+</html>
