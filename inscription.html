@@ -51,11 +51,11 @@
     </div>
     <nav>
       <a href="index.html">Accueil</a>
-      <a href="commentçamarche.html">Comment ça marche</a>
+      <a href="comment_ca_marche.html">Comment ça marche</a>
       <a href="simulateur.html">Simulateur</a>
       <a href="tarifs.html">Tarifs</a>
       <a href="inscription.html">Inscription</a>
-      <a href="#faq">FAQ</a>
+      <a href="faq">FAQ</a>
     </nav>
   </header>
 
@@ -116,7 +116,7 @@
       type: document.getElementById("type").value
     };
 
-    fetch("URL_DU_SCRIPT_GOOGLE_APPS", {
+    fetch("https://script.google.com/macros/s/AKfycbwEXldizBG4lblIZdZ0iA7zhCGT0XENjWzzoy-I4yp5qv4vfMd2LCiTMxWEV029xoS__A/exec", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
